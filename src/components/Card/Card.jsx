@@ -33,3 +33,21 @@ export const Card = ({ pokemon, selectPokemon }) => (
     </div>
   </div>
 );
+
+Card.propTypes = {
+  pokemon: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    weight: PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    types: PropTypes.arrayOf(PropTypes.shape({
+      slot: PropTypes.number
+    })).isRequired,
+    moves: PropTypes.arrayOf(PropTypes.object).isRequired
+  }),
+  selectPokemon: PropTypes.func.isRequired,
+};
+
+Card.defaultProps = {
+  pokemon: {}
+};
