@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import './App.scss';
 import { Card } from './components/Card/Card';
+import { InfoCard } from './components/InfoCard/InfoCard'
 import { getAllPokemon, getPokemon } from './api/api';
 import { Loader } from './components/Loader/Loader';
 
@@ -88,7 +89,12 @@ function App() {
               </button>
             </div>
             <div className="cards">
-              info right
+              {pokemon.map(pokemon => (
+                <InfoCard
+                  pokemon={pokemon}
+                  key={pokemon.id}
+                />
+              ))}
             </div>
           </div>
         )}

@@ -47,7 +47,7 @@ $buttonSize: $cardSize * 3;
 }
 
 .cards {
-  position: fixed;
+  position: absolute;
   top: 16vh;
   right: 20vw;
   margin: 50px;
